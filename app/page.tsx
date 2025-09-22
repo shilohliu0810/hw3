@@ -8,11 +8,30 @@ import ActivityTracker from '@/components/ActivityTracker'
 import SocialFeed from '@/components/SocialFeed'
 import GoogleCalendarAuth from '@/components/GoogleCalendarAuth'
 
+interface CalendarEvent {
+  id: string
+  title: string
+  start: Date
+  end: Date
+  color: string
+}
+
+interface TimeBlock {
+  id: string
+  category: 'study-cs' | 'study-econ' | 'reading' | 'gym' | 'personal'
+  title: string
+  duration: number
+  startTime: string
+  endTime: string
+  description: string
+  priority: 'high' | 'medium' | 'low'
+}
+
 export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [activeTab, setActiveTab] = useState('calendar')
-  const [events, setEvents] = useState([])
-  const [suggestions, setSuggestions] = useState([])
+  const [events, setEvents] = useState<CalendarEvent[]>([])
+  const [suggestions, setSuggestions] = useState<TimeBlock[]>([])
 
   const tabs = [
     { id: 'calendar', label: 'Calendar', icon: Calendar },
@@ -29,7 +48,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <Calendar className="h-8 w-8 text-primary-600 mr-3" />
-              <h1 className="text-2xl font-bold text-gray-900">Smart Calendar</h1>
+              <h1 className="text-2xl font-bold text-gray-900">schoova</h1>
             </div>
             <GoogleCalendarAuth 
               onAuthSuccess={() => setIsAuthenticated(true)}

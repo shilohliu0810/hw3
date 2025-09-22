@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Smart Calendar - AI-Powered Time Management',
+  title: 'schoova - AI-Powered Time Management',
   description: 'Import your Google Calendar and get AI suggestions for optimal time blocking',
 }
 
