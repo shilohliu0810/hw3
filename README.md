@@ -1,4 +1,4 @@
-# Smart Calendar - AI-Powered Time Management
+# schoova - AI-Powered Time Management
 
 A prototype calendar application that integrates with Google Calendar and provides AI-powered time blocking suggestions with social features for activity tracking and sharing.
 
